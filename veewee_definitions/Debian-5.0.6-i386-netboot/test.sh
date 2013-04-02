@@ -2,9 +2,9 @@
 mkdir /v1
 date > /v1/date
 uname -a > /v1/uname
-mkdir -p /tmp/x/{a,b,c}
+mkdir -p /root/x/{a,b,c}
 
-date > /tmp/date
-date > /tmp/uname
-mkdir /tmp/y
+date > /root/date
+date > /root/uname
+mkdir /root/y
 
