@@ -1,0 +1,32 @@
+
+configure
+
+# resource startup disabled since no stonith resources have been defined
+property stonith-enabled=false
+
+# quorum doesnt make sense in two node clusters, so disable quorum
+property no-quorum-policy=ignore
+
+primitive date_symlink ocf:heartbeat:symlink \
+  description="file date" \
+  params target="/v1/date" \
+    link="/tmp/date" \
+    backup_suffix=".original" \
+  op monitor interval="10"
+
+primitive uname_symlink ocf:heartbeat:symlink \
+  description="file uname" \
+  params target="/v1/uname" \
+    link="/tmp/uname" \
+    backup_suffix=".original" \
+  op monitor interval="10"
+
+
+primitive x_symlink ocf:heartbeat:symlink \
+  description="directory /tmp/x" \
+  params target="/tmp/x" \
+    link="/tmp/y" \
+    backup_suffix=".original" \
+  op monitor interval="10"
+
+

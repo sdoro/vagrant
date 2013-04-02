@@ -37,6 +37,7 @@ Veewee::Definition.declare({
   :postinstall_files => [ 
     "postinstall.sh",
     "puppet.sh"
+    "test.sh"
    ],
   :postinstall_timeout => "10000"
 })
