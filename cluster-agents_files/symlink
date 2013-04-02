@@ -172,7 +172,8 @@ symlink_stop() {
                 ocf_log debug "Found backup ${OCF_RESKEY_link}${OCF_RESKEY_backup_suffix}, moving to $OCF_RESKEY_link"
                 # if restoring the backup fails then still return with
                 # $OCF_SUCCESS, but log a warning
-                ocf_run -warn mv "${OCF_RESKEY_link}${OCF_RESKEY_backup_suffix}" "$OCF_RESKEY_link"
+                ocf_log debug "Restoring the backup"
+                ocf_run mv "${OCF_RESKEY_link}${OCF_RESKEY_backup_suffix}" "$OCF_RESKEY_link"
             fi
             return $OCF_SUCCESS
         else
