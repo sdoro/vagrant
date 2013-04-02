@@ -36,7 +36,7 @@ Veewee::Definition.declare({
   :shutdown_cmd => "halt -p",
   :postinstall_files => [ 
     "postinstall.sh",
-    "puppet.sh"
+    "puppet.sh",
     "test.sh"
    ],
   :postinstall_timeout => "10000"
