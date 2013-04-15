@@ -1,8 +1,8 @@
 #Installing the virtualbox guest additions
-VBOX_VERSION=$(cat /home/vagrant/.vbox_version)
+#VBOX_VERSION=$(cat /home/vagrant/.vbox_version)
 VBOX_VERSION=4.1.18
 
-if test -f $VBOX_VERSION
+#if test -f $VBOX_VERSION
   cd /tmp
   wget http://download.virtualbox.org/virtualbox/$VBOX_VERSION/VBoxGuestAdditions_$VBOX_VERSION.iso
   mount -o loop VBoxGuestAdditions_$VBOX_VERSION.iso /mnt
@@ -22,4 +22,4 @@ if test -f $VBOX_VERSION
   apt-get -y autoremove
 
   rm VBoxGuestAdditions_$VBOX_VERSION.iso
-fi
+#fi
