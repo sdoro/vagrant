@@ -36,6 +36,7 @@ Veewee::Definition.declare({
   :shutdown_cmd => "halt -p",
   :postinstall_files => [ 
     "postinstall.sh",
+    "virtualbox.sh",
     "puppet.sh",
     "corosync.sh",
     "test.sh"
