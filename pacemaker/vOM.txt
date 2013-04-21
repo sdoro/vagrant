@@ -1,0 +1,15 @@
+
+# vagrant basebox undefine 'vOM'
+vagrant basebox define 'vOM' 'Debian-5.0.6-i386-netboot'
+# vagrant basebox destroy vOM
+vagrant basebox build 'vOM'
+
+# rm vOM.box
+vagrant basebox export 'vOM'
+# vagrant box remove vOM
+vagrant box add 'vOM' vOM.box
+
+# vagrant init 'vOM'
+# vagrant up
+# vagrant ssh
+

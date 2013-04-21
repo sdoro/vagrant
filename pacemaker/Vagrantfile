@@ -1,0 +1,24 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant::Config.run do |config|
+
+  vms = { :v1 => '192.168.222.10',
+          :v2 => '192.168.222.11'
+        }
+
+  vms.each do |vms_name, vms_ip|
+    config.vm.define vms_name do |pacemaker_config|
+      pacemaker_config.vm.box = "vOM"
+      # change virtualbox external name:
+      pacemaker_config.vm.customize ["modifyvm", :id, "--name", "vOM_" + vms_name.to_s]
+      pacemaker_config.vm.host_name = vms_name.to_s
+      pacemaker_config.vm.network :hostonly, vms_ip
+      pacemaker_config.vm.provision  :puppet do  |puppet|
+        puppet.manifests_path = "puppet/vagrant-manifests"
+        puppet.manifest_file = vms_name.to_s + ".pp"
+        puppet.module_path  = "puppet/modules"
+      end
+    end
+  end
+end
