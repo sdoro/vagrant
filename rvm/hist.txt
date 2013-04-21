@@ -1,0 +1,8 @@
+mkdir rvm
+cd rvm/
+\curl -L https://get.rvm.io | bash -s stable --ruby
+source ~/.rvm/scripts/rvm
+vi Gemfile
+rvm install ruby-1.9.3
+rvm use 1.9.3
+bundle
