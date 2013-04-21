@@ -1,0 +1,7 @@
+
+File -> Preferences... -> Network -> + vboxnet1 -> Adapter \
+   IP addr 192.168.222.254
+
+File -> Preferences... -> Network -> + vboxnet1 -> Adapter \
+   DHCP Server -> Disabled
+
