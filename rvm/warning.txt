@@ -1,0 +1,11 @@
+
+To remove 
+
+"$0 was built against LibXML version d.d.d, but has dynamically loaded d.d.d"
+
+
+
+gem uninstall libxml-ruby
+gem install nokogiri
+bundle
+

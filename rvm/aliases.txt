@@ -1,0 +1,1 @@
+alias veewee='bundle exec veewee'
