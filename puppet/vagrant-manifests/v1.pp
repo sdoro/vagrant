@@ -15,3 +15,12 @@ host { 'p2.vagrant.com':
     host_aliases => ['dx','p2']
 }
 
+file { '/etc/mailname':
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => 644,
+    #content => "${hostname}\n",
+    content => "${fqdn}\n",
+}
+
