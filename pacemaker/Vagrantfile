@@ -12,7 +12,7 @@ Vagrant::Config.run do |config|
       pacemaker_config.vm.box = "vOM"
       # change virtualbox external name:
       pacemaker_config.vm.customize ["modifyvm", :id, "--name", "vOM_" + vms_name.to_s]
-      pacemaker_config.vm.host_name = vms_name.to_s
+      pacemaker_config.vm.host_name = vms_name.to_s + ".vagrant.com"
       pacemaker_config.vm.network :hostonly, vms_ip
       pacemaker_config.vm.provision  :puppet do  |puppet|
         puppet.manifests_path = "puppet/vagrant-manifests"
