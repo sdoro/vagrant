@@ -1,4 +1,6 @@
 
+include motd
+
 host { 'p1.vagrant.com':
     ensure => 'present',
     target => '/etc/hosts',
