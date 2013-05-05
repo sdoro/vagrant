@@ -45,6 +45,7 @@ Veewee::Definition.declare({
     "chef.sh",
     "cleanup-virtualbox.sh",
     "cleanup.sh",
+    "keyboards.sh",
     "zerodisk.sh"
   ],
   :postinstall_timeout => "10000"
